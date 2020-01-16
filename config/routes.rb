@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :quotes
   resources :books
   root to: 'application#welcome'
   devise_for :users, :controllers => {registrations: 'registrations', omniauth_callbacks: 'callbacks' }
