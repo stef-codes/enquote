@@ -3,4 +3,6 @@
 
 <p>Book: <%= @quote.book.name %></p>
 
+<%= link_to "Edit", edit_quote_path %> | <%=  link_to "Delete", quote_path, method: "delete" %>
+
 <%# <h3>By <%= link_to @book.author, books_path</h3>  %>

@@ -2,13 +2,6 @@
 
 <%= form_for (@quote) do |f| %>
   <%= f.label "Quote" %>
-  <%= f.text_area :content %>
-  <%= f.collection_select :book_id, Book.all, :id, :name%>
-  <%= f.fields_for :book, @quote.build_book do |book_form| %>
-    <%= book_form.label "Name" %>
-    <%= book_form.text_field :name %><br><br>
-    <%= book_form.label "Author" %>
-    <%= book_form.text_field :author %><br><br>
-  <% end %>
+  <%= f.text_area :content %><br><br>
   <%= f.submit %>
 <% end %>

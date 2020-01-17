@@ -43,7 +43,7 @@ class QuotesController < ApplicationController
       end
     
       def update
-        @quote = quote.find(params[:id])
+        @quote = current_user.quotes.find_by(id: params[:id])
     
         @quote.update(quote_params)
     
@@ -55,7 +55,7 @@ class QuotesController < ApplicationController
       end
     
       def destroy
-        @quote = quote.find(params[:id])
+        @quote = current_user.quotes.find_by(id: params[:id])
         @quote.destroy
         flash[:notice] = "quote deleted."
         redirect_to quotes_path
