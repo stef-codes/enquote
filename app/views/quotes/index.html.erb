@@ -1,7 +1,9 @@
 <h1>Welcome to Your Quotes</h1>
-
-   <%@quotes.each do |quote|%>
-         <% binding.pry %>
-        <li><%= link_to quote.content, quote_path(quote) %></li>
+    
+    <%@quotes.each do |quote|%>
+         <%# <% binding.pry %> 
+        <% if !quote.content.nil? %>
+            <li><%= link_to quote.content, quote_path(quote) %></li>
+        <% end%>
     <% end %>
     </ul>
