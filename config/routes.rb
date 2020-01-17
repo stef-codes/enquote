@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
   resources :quotes
+
   resources :books
+
+  resources :books, only: [:show]  do
+    # nested resource for posts
+    resources :quotes, only: [:index]
+  end
+
+
   root to: 'application#welcome'
   devise_for :users, :controllers => {registrations: 'registrations', omniauth_callbacks: 'callbacks' }
   devise_scope :user do 

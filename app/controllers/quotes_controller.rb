@@ -6,9 +6,17 @@ class QuotesController < ApplicationController
 
         if params[:search]
           @quotes = current_user.quotes.searched(params[:search])
+        elsif params[:book_id]
+          book = current_user.books.find_by(id: params[:book_id])
+          if book
+            @quotes = book.quotes  
+          else
+            redirect_to books_path
+          end 
         else
           @quotes = current_user.quotes
         end
+
     end
     
       def show
