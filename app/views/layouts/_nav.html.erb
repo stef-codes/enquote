@@ -7,7 +7,8 @@
             <li><%= link_to "Login", new_user_session_path %></li>
         <% else %>
             <%= current_user.username %> 
-            <li><%= link_to "Quotes", quotes_path %></li>
+            <li><%= link_to "My Quotes", quotes_path %></li>
+            <li><%= link_to "All Books", books_path %></li>
             <li><%=  link_to "Logout", destroy_user_session_path, method: "delete" %></li>
         <% end %>
     </ul>
