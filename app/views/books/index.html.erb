@@ -1,0 +1,7 @@
+<h1>Check out all the Books</h1>
+
+   <%@books.each do |book|%>
+        <%# <% binding.pry%> 
+        <li><%= link_to book.name, book_path(book) %></li>
+    <% end %>
+    </ul>
