@@ -2,8 +2,14 @@ class QuotesController < ApplicationController
     before_action :authenticate_user!
 
     def index
-        @quotes = current_user.quotes
-      end
+        # binding.pry
+
+        if params[:search]
+          @quotes = current_user.quotes.searched(params[:search])
+        else
+          @quotes = current_user.quotes
+        end
+    end
     
       def show
     
@@ -20,7 +26,7 @@ class QuotesController < ApplicationController
         if @quote.save
           redirect_to @quote
         else
-          redirect_to new_quote_path
+          render :new
         end
       end
     

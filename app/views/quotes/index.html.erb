@@ -7,3 +7,10 @@
         <% end%>
     <% end %>
     </ul>
+
+<h3>Search Quotes</h3>
+
+<%= form_tag quotes_path, :method => 'get' do %>  <p>   
+    <%= text_field_tag :search, params[:search] %>   
+    <%= submit_tag "Search" %> </p>
+<% end %>
