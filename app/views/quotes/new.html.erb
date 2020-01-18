@@ -13,11 +13,11 @@
 
 
 <%= form_for (@quote) do |f| %>
-  <%= f.label "Quote:" %><br>
-  <%= f.text_area :content %><br>
-  <%= f.label "Select Book:" %><br>
-  <%= f.collection_select :book_id, Book.all, :id, :name, include_blank: true %><br><br>
-  <%= f.label "Add Book:" %><br>
+  <%= f.label "Add Quote:" %><br>
+  <%= f.text_area :content %><br><br>
+  <%= f.label "Select the book associated with the quote:" %><br>
+  <%= f.collection_select :book_id, Book.all.order(:name), :id, :name, include_blank: true %><br><br>
+  <%= f.label "Or Add a book not listed above:" %><br>
   <%= f.fields_for :book, @quote.build_book do |book_form| %>
     <%= book_form.label "Name" %>
     <%= book_form.text_field :name %><br><br>

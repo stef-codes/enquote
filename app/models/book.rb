@@ -5,6 +5,6 @@ class Book < ApplicationRecord
     validates :author, presence: true
     validates :name, uniqueness: true
 
-    scope :has_author, -> { has_author.where("author IS NOT NULL") }
+    accepts_nested_attributes_for :quotes, reject_if: :all_blank
     
 end

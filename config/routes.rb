@@ -5,8 +5,10 @@ Rails.application.routes.draw do
 
   resources :books, only: [:show]  do
     # nested resource for posts
-    resources :quotes, only: [:index]
+    resources :quotes, only: [:index, :show]
   end
+
+
 
 
   root to: 'application#welcome'

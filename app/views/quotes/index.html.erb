@@ -4,7 +4,7 @@
 
 <%= form_tag quotes_path, :method => 'get' do %>  <p>   
     <%= text_field_tag :search, params[:search] %>   
-    <%= submit_tag "Search" %> </p>
+    <%= submit_tag "Search", name: nil %> </p>
 <% end %>
 
 <h3>Your  Quotes</h3>
@@ -15,4 +15,6 @@
         <% end%>
     <% end %>
     </ul>
+
+<h3><%= link_to "Add a Quote", new_quote_path %></h3>
 

@@ -3,10 +3,12 @@ class BooksController < ApplicationController
     
     def index
         @books = Book.all.order(:name)
+
       end
     
       def show
-        @book = Book.find(params[:id])
+        # binding.pry
+        @book = Book.find_by(id: params[:id])
       end
     
       def new
@@ -24,11 +26,11 @@ class BooksController < ApplicationController
       end
     
       def edit
-        @book = Book.find(params[:id])
+        @book = Book.find_by(id: params[:id])
       end
     
       def update
-        @book = Book.find(params[:id])
+        @book = Book.find_by(id: params[:id])
     
         @book.update(book_params)
     
