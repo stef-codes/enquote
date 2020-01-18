@@ -16,7 +16,6 @@ class QuotesController < ApplicationController
         else
           @quotes = current_user.quotes
         end
-
     end
     
       def show
