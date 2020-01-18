@@ -14,7 +14,7 @@
 
 <%= form_for (@quote) do |f| %>
   <%= f.label "Add Quote:" %><br>
-  <%= f.text_area :content %><br><br>
+  <%= f.text_area :content, :class => 'form-control' %><br><br>
   <%= f.label "Select the book associated with the quote:" %><br>
   <%= f.collection_select :book_id, Book.all.order(:name), :id, :name, include_blank: true %><br><br>
   <%= f.label "Or Add a book not listed above:" %><br>
