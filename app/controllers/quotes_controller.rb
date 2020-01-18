@@ -38,7 +38,7 @@ class QuotesController < ApplicationController
       end
     
       def edit
-        @quote = Quote.find(params[:id])
+        @quote = current_user.quotes.find_by(id: params[:id])
       end
     
       def update

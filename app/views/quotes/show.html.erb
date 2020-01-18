@@ -3,7 +3,7 @@
 
 <p>Book: <%= @quote.book.name %></p>
 <%# 
-  <h3>by: <%= link_to quote.book.name, author_posts_path(post.author) %></h3> %>
+  <h3>by: <%= link_to quote.book.name, author_posts_path(post.author) %></h3>
 
 
 <%= link_to "Edit", edit_quote_path %> | <%=  link_to "Delete", quote_path, method: "delete" %>

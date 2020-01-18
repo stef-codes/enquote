@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :books
 
   resources :books, only: [:show]  do
-    # nested resource for posts
+    # nested resource for quotes
     resources :quotes, only: [:index, :show]
   end
 
