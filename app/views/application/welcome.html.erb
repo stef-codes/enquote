@@ -1,5 +1,14 @@
 <h1>Book Quote Application</h1>
-
-Amazing Message about Books and Quotes. 
-
-Get started on your journey: <h4><%= link_to "Add a Quote", new_quote_path %></h4>
+<br>
+<h4>
+<% if user_signed_in? && current_user.quotes.any?%>
+<%= form_tag quotes_path, :method => 'get' do %>   
+    <%= text_field_tag :search, params[:search] %>   
+    <%= submit_tag "Search", name: nil %> </h4>
+<% end %>
+<% end %>
+</h4>
+<br>
+<p>Amazing Message about Books and Quotes. Get started on your journey:</p>
+<br>
+<h4><%= link_to "Add a Quote", new_quote_path %></h4>

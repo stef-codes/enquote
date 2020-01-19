@@ -1,12 +1,12 @@
 <h1><%= @book.name %></h1>
 
-<h3>By: <%= @book.author %></h3>
-
+<h4>By: <%= @book.author %></h4>
+<br>
+<br>
 <h2>Quotes from this Book</h2>
-<p>
-    <ul>
+
+<h5>
     <% @book.quotes.each do |quote| %>
-    <li><%= quote.content%>
+        <%= quote.content%><br>
     <%end%>
-    </ul>
-</p>
+</h5>

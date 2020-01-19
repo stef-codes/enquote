@@ -1,11 +1,11 @@
 <h1>Quote: 
 <h2><%= @quote.content %> - <%= @quote.book.author %> </h2>
 
-<h3>Book: <%= @quote.book.name.upcase %></h3>
+<h5><%= @quote.book.name.upcase %></h5>
 <%# 
   <h3>by: <%= link_to quote.book.name, author_posts_path(post.author) %></h3>
 
 
-<%= link_to "Edit", edit_quote_path %> | <%=  link_to "Delete", quote_path, method: "delete" %>
+<p><%= link_to "Edit", edit_quote_path %> | <%=  link_to "Delete", quote_path, method: "delete" %></p>
 
 <%# <h3>By <%= link_to @book.author, books_path</h3>  %>
