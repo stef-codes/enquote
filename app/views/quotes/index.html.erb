@@ -10,19 +10,15 @@
 <br>
 <br>
 
-<h4>Your  Quotes</h4>
+<h4>Your  Quotes</h4><br>
     <h4><%@quotes.each do |quote|%>
          <%# <% binding.pry %> 
         <% if !quote.content.nil? %>
-            <%= link_to quote.content, quote_path(quote) %>
+            <%= link_to quote.content, quote_path(quote) %><br><br>
         <% end%>
     <% end %>
     </h4>
-
 <br>
-<br>
-<br>
-
 <h4>Do you have more inspiration?</h4>
 <h4><%= link_to "Add a Quote", new_quote_path %></h4>
 

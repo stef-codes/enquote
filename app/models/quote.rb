@@ -5,6 +5,7 @@ class Quote < ApplicationRecord
     accepts_nested_attributes_for :book, reject_if: :all_blank
 
     validates :content, presence: true
+    validates :content, length: { minimum: 10 }
 
     # scope :search_love, -> { search_love.where("content IS LIKE %love%") }
     scope :searched, ->(search_term) { where("content LIKE ?", "%#{search_term}%") }

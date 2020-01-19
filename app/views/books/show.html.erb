@@ -7,6 +7,9 @@
 
 <h5>
     <% @book.quotes.each do |quote| %>
-        <%= quote.content%><br>
+        <%= link_to quote.content, book_quote_path(@book, quote) %>
+        <br>
+        <br>
+        <h4><%= link_to 'Create a new Quote', new_book_quote_path(@book, quote) %></h4>
     <%end%>
 </h5>
