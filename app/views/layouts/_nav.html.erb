@@ -6,7 +6,7 @@
             <%= link_to "Signup", new_user_registration_path %><br>
             <%= link_to "Login", new_user_session_path %><br>
         <% else %>
-            <%= current_user.username %><br>
+            <%= current_user.email %><br>
             <%= link_to "My Quotes", quotes_path %><br>
             <%= link_to "All Books", books_path %><br>
             <%=  link_to "Logout", destroy_user_session_path, method: "delete" %>
