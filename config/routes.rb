@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get '/quotes/search', to: 'quotes#search', as: 'quotes_search'
+
   resources :quotes
 
   resources :books
@@ -7,6 +10,8 @@ Rails.application.routes.draw do
     # nested resource for quotes
     resources :quotes, only: [:new, :index, :show]
   end
+
+
 
 
 
