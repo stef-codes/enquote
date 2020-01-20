@@ -1,5 +1,4 @@
-<h1>Book Quote Application</h1>
-<br>
+<h1>Enquote</h1>
 <h4>
 <% if user_signed_in? && current_user.quotes.any?%>
 <%= form_tag quotes_path, :method => 'get' do %>   
@@ -8,7 +7,14 @@
 <% end %>
 <% end %>
 </h4>
+<div class="photo">
+    <img src="https://i1.wp.com/www.lisasell.co.uk/wp-content/uploads/2017/06/BOOKS..png?fit=659%2C318&ssl=1" alt="books">
+    <img src="https://elburn.lib.il.us/wp-content/uploads/2017/05/library-services.jpg" alt="library">
+
+</div>
 <br>
-<p>Amazing Message about Books and Quotes. Get started on your journey:</p>
+<h4>“Books are a uniquely portable magic.”
+― Stephen King</h4>
+ <h4>On Writing: A Memoir of the Craft</h4>
 <br>
 <h4><%= link_to "Add a Quote", new_quote_path %></h4>
