@@ -12,29 +12,7 @@ install yarn
 bundle install
 ```
 
-Devise for User Authentication: 
-https://medium.com/swlh/https-medium-com-melee-santiago-using-devise-gem-to-handle-authentication-in-rails-app-538bbd231dde
-
-
-Oauth Setup for Github: 
-https://github.com/omniauth/omniauth-github
-
-
-### Installing
-
-Dependencies 
-
-```
-install yarn 
-
-bundle install
-```
-
-Devise for User Authentication: 
-https://medium.com/swlh/https-medium-com-melee-santiago-using-devise-gem-to-handle-authentication-in-rails-app-538bbd231dde
-
-
-Oauth Setup for Github: 
+Setup Oauth for Github to have the same functionality as the project. (Optional)
 https://github.com/omniauth/omniauth-github
 
 Now you're ready to run the rails server using: 
