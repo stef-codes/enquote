@@ -13,7 +13,7 @@
 
 
 <%if !params[:book_id] %>
-    <%= form_for (@quote) do |f| %>
+    <%= form_for @quote do |f| %>
     <%= f.label "Add Quote:" %><br>
     <%= f.text_area :content, :class => 'form-control' %><br><br>
     <%= f.label "Select the book associated with the quote:" %><br>
@@ -28,7 +28,7 @@
     <%= f.submit %>
     <% end %>
 <% else  %>
-    <%= form_for [@quote] do |f|%>
+    <%= form_for @quote do |f|%>
     <%= f.hidden_field :book_id %>
     <%= f.label "Add Quote For This Book:" %><br>
     <%= f.text_area :content, :class => 'form-control' %><br><br>
