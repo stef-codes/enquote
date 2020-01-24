@@ -12,7 +12,6 @@
 
 <h4>Your  Quotes</h4><br>
     <h4><%@quotes.each do |quote|%>
-         <%# <% binding.pry %> 
         <% if !quote.content.nil? %>
             <%= link_to quote.content, quote_path(quote) %><br><br>
         <% end%>

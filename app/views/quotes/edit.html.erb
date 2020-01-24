@@ -1,8 +1,7 @@
-<h1>Editing Your Quote</h1>
+<h1>Change Your Quote</h1>
 <br>
 <h4>
 <%= form_for (@quote) do |f| %>
-  <%# <%= f.label "Quote" %>
   <%= f.text_area :content %><br><br>
   <%= f.submit %>
 <% end %>
