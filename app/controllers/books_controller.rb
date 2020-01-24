@@ -7,7 +7,6 @@ class BooksController < ApplicationController
       end
     
       def show
-        # binding.pry
         @book = Book.find_by(id: params[:id])
       end
     
