@@ -7,11 +7,9 @@ class Quote < ApplicationRecord
     validates :content, presence: true
     validates :content, length: { minimum: 10 }
 
-    # scope :search_love, -> { search_love.where("content IS LIKE %love%") }
+
     scope :searched, ->(search_term) { where("content LIKE ?", "%#{search_term}%") }
 
     # scope :searched, ->(search_term) { where(“content LIKE ?", "%#{sanitize_sql_like(search_term)}%”)}
-
-    # scope :searched, ->(search_term) { where(“content LIKE ?", "%#{sanitize_sql_like(search_term)}%”) }
 end
  
