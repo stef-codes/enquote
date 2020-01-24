@@ -1,10 +1,8 @@
 <h1><%= @book.name %></h1>
-
 <h4>By: <%= @book.author %></h4>
 <br>
 <br>
 <h2>Quotes from this Book</h2>
-
 <h5>
     <% @book.quotes.each do |quote| %>
         <%= link_to quote.content, book_quote_path(@book, quote) %>
