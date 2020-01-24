@@ -5,7 +5,7 @@ class QuotesController < ApplicationController
     end
 
     def index
-        # binding.pry
+        #  binding.pry
 
         if params[:search]
           @quotes = current_user.quotes.searched(params[:search])
@@ -22,17 +22,50 @@ class QuotesController < ApplicationController
     end
     
       def show
-    
+      
         @quote = current_user.quotes.find_by(id: params[:id])
       end
     
       def new
-        @quote = current_user.quotes.build
+        # def new       
+        #   @topic = Topic.find_by(id: params[:topic_id]) 
+        #        @entry = current_user.entries.build    
+        #       end 
+         # if the nested new quote for a book with book id 
+        #  params[:book_id]
+        # if params[:book_id]
+        # @book = Book.find_by(id: params[:id])
+        #   @book = Book.find_by(id: params[:book_id])
+        # end
+          
+        #   @quote = current_user.quotes.books.find_by(id: params[:book_id].build
+        #else
+        
+          @quote = current_user.quotes.build(book_id: params[:book_id])
+      
       end
     
       def create
+        # if the nested new quote for a book with book id 
+        # .build for that with the connection. (Put connection in to build_book_quote or AR association for that)
+        #else what I have that ya'll don't like
+        # @quote = current_user.quotes.books.find_by(id: params[:book_id].build(quote_params)
+        
+        # def create      
+        #   @topic = Topic.find_by(id: params[:topic_id])
+        #     @entry = current_user.entries.build(entry_params)
+        #          @entry.topic = @topic     
+        #         if @entry.save
+        #     redirect_to topic_entry_path(@entry.topic, @entry)      
+        #    else          
+        #     render :new       
+        #   end     
+        # end
+        # @book = Book.find_by(id: params[:id])
+        # if params[:book_id]
+        # end
         @quote = current_user.quotes.build(quote_params)
-    
+          # binding.pry
         if @quote.save
           redirect_to @quote
         else
@@ -64,10 +97,6 @@ class QuotesController < ApplicationController
       end
     
       private
-
-      
-
-
     
       def quote_params
         params.require(:quote).permit(:content, :user_id, :book_id, book_attributes: [:name, :author])

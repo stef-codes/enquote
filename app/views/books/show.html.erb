@@ -10,6 +10,6 @@
         <%= link_to quote.content, book_quote_path(@book, quote) %>
         <br>
         <br>
-        <h4><%= link_to 'Create a new Quote', new_book_quote_path(@book, quote) %></h4>
     <%end%>
+    <h4><%= button_to 'Create a new Quote', new_book_quote_path(@book)%></h4>
 </h5>

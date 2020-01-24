@@ -12,11 +12,11 @@ class BooksController < ApplicationController
       end
     
       def new
-        @book = Book.new
+        @book = Book.create
       end
     
       def create
-        @book = Book.new(book_params)
+        @book = Book.create(book_params)
     
         if @book.save
           redirect_to @book

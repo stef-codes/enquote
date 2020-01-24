@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :books, only: [:show]  do
     # nested resource for quotes
-    resources :quotes, only: [:new, :index, :show]
+    resources :quotes, only: [:new, :show]
   end
 
 
