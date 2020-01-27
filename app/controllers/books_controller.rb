@@ -1,9 +1,14 @@
 class BooksController < ApplicationController
     before_action :authenticate_user!
     
-    def index
-        @books = Book.all.order(:name)
-
+      def index
+        # @books = Book.all.order(:name)
+        if params[:search]
+          # binding.pry
+          @books = Book.search_book(params[:search])
+        else
+          @books = Book.all.order(:name)
+        end
       end
     
       def show
@@ -11,12 +16,14 @@ class BooksController < ApplicationController
       end
     
       def new
-        @book = Book.create
+        @book = Book.new
       end
     
       def create
-        @book = Book.create(book_params)
-    
+        @book = Book.new(book_params)
+
+        @book.save
+        
         if @book.save
           redirect_to @book
         else

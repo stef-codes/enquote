@@ -1,16 +1,6 @@
-<%# <h1>Check Out All The Books</h1> %>
-<br>
 <h1>Search Books</h1>
 <h4>
 <%= form_tag books_path, :method => 'get' do %>   
     <%= text_field_tag :search, params[:search] %>   
     <%= submit_tag "Search", name: nil %> </h4>
 <% end %>
-<br>
-
-<h2>Book List</h2>
-<h4>
-<%@books.each do |book|%>
-    <%= link_to book.name, book_path(book) %><br>
-<% end %>
-</h4>

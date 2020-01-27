@@ -6,5 +6,7 @@ class Book < ApplicationRecord
     validates :name, :presence => true, :uniqueness => true
 
     accepts_nested_attributes_for :quotes, reject_if: :all_blank
+
+    scope :search_book, ->(book_search) { where("name LIKE ?", "%#{book_search}%") }
     
 end
